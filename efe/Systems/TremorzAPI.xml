@@ -302,6 +302,41 @@
       <CustomText3></CustomText3>
     </SeriesField>
   </Series>
+  <Series>
+    <SeriesName>API_Input</SeriesName>
+    <MaxRows>100</MaxRows>
+    <MaxRowsHandler>RemoveFirstRow</MaxRowsHandler>
+    <InputType>HTTPServer</InputType>
+    <InputName>API</InputName>
+    <InputEnabled>True</InputEnabled>
+    <HeaderOperation>None</HeaderOperation>
+    <NotOperation>False</NotOperation>
+    <HeaderValue></HeaderValue>
+    <Encoding>UTF8</Encoding>
+    <Endian>LittleEndian</Endian>
+    <CustomText1></CustomText1>
+    <CustomText2>!d!</CustomText2>
+    <CustomText3></CustomText3>
+    <SeriesField>
+      <FieldName>String_Document</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>Document</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+  </Series>
   <DBReader>
     <DBReaderName>TremorzDB</DBReaderName>
     <DatabaseType>SQLServer</DatabaseType>
@@ -374,8 +409,8 @@
     <InstanceName>OnLoad</InstanceName>
     <EventTrigger>Elapsed</EventTrigger>
     <Enabled>True</Enabled>
-    <RelatedType>SingleAction</RelatedType>
-    <RelatedName>TremorzDB_Connect</RelatedName>
+    <RelatedType>Policy</RelatedType>
+    <RelatedName>evOnLoad_Elapsed</RelatedName>
     <ExecutionMode>0</ExecutionMode>
     <CustomText1></CustomText1>
     <CustomText2></CustomText2>
@@ -387,8 +422,8 @@
     <InstanceName>API</InstanceName>
     <EventTrigger>RequestReceived</EventTrigger>
     <Enabled>True</Enabled>
-    <RelatedType>SingleAction</RelatedType>
-    <RelatedName></RelatedName>
+    <RelatedType>Policy</RelatedType>
+    <RelatedName>evAPI_RequestReceived</RelatedName>
     <ExecutionMode>0</ExecutionMode>
     <CustomText1></CustomText1>
     <CustomText2></CustomText2>
@@ -400,7 +435,7 @@
     <InstanceName>TremorzDB</InstanceName>
     <Action>Connect()</Action>
     <ReturnValueTo></ReturnValueTo>
-    <PolicyName></PolicyName>
+    <PolicyName>evOnLoad_Elapsed</PolicyName>
     <PolicyOrder>1</PolicyOrder>
     <Enabled>True</Enabled>
     <ExecutionMode>0</ExecutionMode>
@@ -414,8 +449,8 @@
     <InstanceName>TremorzDB</InstanceName>
     <Action>Select(SelectStatement)</Action>
     <ReturnValueTo></ReturnValueTo>
-    <PolicyName>GetSchema</PolicyName>
-    <PolicyOrder>2</PolicyOrder>
+    <PolicyName>evAPI_RequestReceived</PolicyName>
+    <PolicyOrder>1</PolicyOrder>
     <Enabled>True</Enabled>
     <ExecutionMode>0</ExecutionMode>
     <CustomText1></CustomText1>
@@ -438,8 +473,8 @@
     <InstanceName>TremorzDB</InstanceName>
     <Action>Select(SelectStatement)</Action>
     <ReturnValueTo></ReturnValueTo>
-    <PolicyName>GetSchema</PolicyName>
-    <PolicyOrder>2</PolicyOrder>
+    <PolicyName>GetFB</PolicyName>
+    <PolicyOrder>1</PolicyOrder>
     <Enabled>True</Enabled>
     <ExecutionMode>0</ExecutionMode>
     <CustomText1></CustomText1>
