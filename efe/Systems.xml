@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<SystemInfo>
+  <System>
+    <Name>[OSP]</Name>
+    <Value>False</Value>
+  </System>
+  <System>
+    <Group>DEFAULT</Group>
+    <Affinity>0</Affinity>
+    <RedundancyMode>1</RedundancyMode>
+    <Name>TremorzAPI.xml</Name>
+    <LoadOrder>0</LoadOrder>
+    <LoadDelay>0</LoadDelay>
+    <LoadType>0</LoadType>
+    <AllowHTTPAccess>0</AllowHTTPAccess>
+    <TryReloading>0</TryReloading>
+    <ReloadDelay>0</ReloadDelay>
+    <HasErrors>0</HasErrors>
+    <LastModified>01/01/01 13:00:00</LastModified>
+  </System>
+</SystemInfo>
