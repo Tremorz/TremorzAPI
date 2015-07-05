@@ -78,9 +78,9 @@
     </SeriesField>
   </Series>
   <Series>
-    <SeriesName>TremorzDB_appMessage</SeriesName>
-    <MaxRows>100</MaxRows>
-    <MaxRowsHandler>RemoveFirstRow</MaxRowsHandler>
+    <SeriesName>TremorzDB_Message</SeriesName>
+    <MaxRows>1000</MaxRows>
+    <MaxRowsHandler>StopAddingRows</MaxRowsHandler>
     <InputType>DBReader</InputType>
     <InputName>TremorzDB</InputName>
     <InputEnabled>True</InputEnabled>
@@ -93,7 +93,7 @@
     <CustomText2>!d!</CustomText2>
     <CustomText3></CustomText3>
     <SeriesField>
-      <FieldName>Id</FieldName>
+      <FieldName>Category</FieldName>
       <FieldDataType>Object</FieldDataType>
       <FieldXMLMapping>Element</FieldXMLMapping>
       <RelatedTo>DatabaseRow</RelatedTo>
@@ -108,11 +108,11 @@
       <Length>-1</Length>
       <Method>RowElement</Method>
       <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
+      <CustomText2>!d!</CustomText2>
       <CustomText3></CustomText3>
     </SeriesField>
     <SeriesField>
-      <FieldName>Message</FieldName>
+      <FieldName>Source</FieldName>
       <FieldDataType>Object</FieldDataType>
       <FieldXMLMapping>Element</FieldXMLMapping>
       <RelatedTo>DatabaseRow</RelatedTo>
@@ -120,109 +120,14 @@
       <CustomValue></CustomValue>
       <Delimiter>,</Delimiter>
       <StartModifier>0</StartModifier>
-      <Element>1</Element>
+      <Element>NEXT</Element>
       <Table>0</Table>
       <IndexStart>0</IndexStart>
       <IndexEnd>-1</IndexEnd>
       <Length>-1</Length>
       <Method>RowElement</Method>
       <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
-      <CustomText3></CustomText3>
-    </SeriesField>
-    <SeriesField>
-      <FieldName>Quantity</FieldName>
-      <FieldDataType>Object</FieldDataType>
-      <FieldXMLMapping>Element</FieldXMLMapping>
-      <RelatedTo>DatabaseRow</RelatedTo>
-      <PrimaryKey>False</PrimaryKey>
-      <CustomValue></CustomValue>
-      <Delimiter>,</Delimiter>
-      <StartModifier>0</StartModifier>
-      <Element>2</Element>
-      <Table>0</Table>
-      <IndexStart>0</IndexStart>
-      <IndexEnd>-1</IndexEnd>
-      <Length>-1</Length>
-      <Method>RowElement</Method>
-      <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
-      <CustomText3></CustomText3>
-    </SeriesField>
-    <SeriesField>
-      <FieldName>deviceID</FieldName>
-      <FieldDataType>Object</FieldDataType>
-      <FieldXMLMapping>Element</FieldXMLMapping>
-      <RelatedTo>DatabaseRow</RelatedTo>
-      <PrimaryKey>False</PrimaryKey>
-      <CustomValue></CustomValue>
-      <Delimiter>,</Delimiter>
-      <StartModifier>0</StartModifier>
-      <Element>3</Element>
-      <Table>0</Table>
-      <IndexStart>0</IndexStart>
-      <IndexEnd>-1</IndexEnd>
-      <Length>-1</Length>
-      <Method>RowElement</Method>
-      <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
-      <CustomText3></CustomText3>
-    </SeriesField>
-    <SeriesField>
-      <FieldName>UserName</FieldName>
-      <FieldDataType>Object</FieldDataType>
-      <FieldXMLMapping>Element</FieldXMLMapping>
-      <RelatedTo>DatabaseRow</RelatedTo>
-      <PrimaryKey>False</PrimaryKey>
-      <CustomValue></CustomValue>
-      <Delimiter>,</Delimiter>
-      <StartModifier>0</StartModifier>
-      <Element>4</Element>
-      <Table>0</Table>
-      <IndexStart>0</IndexStart>
-      <IndexEnd>-1</IndexEnd>
-      <Length>-1</Length>
-      <Method>RowElement</Method>
-      <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
-      <CustomText3></CustomText3>
-    </SeriesField>
-    <SeriesField>
-      <FieldName>TimeStamp</FieldName>
-      <FieldDataType>Object</FieldDataType>
-      <FieldXMLMapping>Element</FieldXMLMapping>
-      <RelatedTo>DatabaseRow</RelatedTo>
-      <PrimaryKey>False</PrimaryKey>
-      <CustomValue></CustomValue>
-      <Delimiter>,</Delimiter>
-      <StartModifier>0</StartModifier>
-      <Element>5</Element>
-      <Table>0</Table>
-      <IndexStart>0</IndexStart>
-      <IndexEnd>-1</IndexEnd>
-      <Length>-1</Length>
-      <Method>RowElement</Method>
-      <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
-      <CustomText3></CustomText3>
-    </SeriesField>
-    <SeriesField>
-      <FieldName>TypeId</FieldName>
-      <FieldDataType>Object</FieldDataType>
-      <FieldXMLMapping>Element</FieldXMLMapping>
-      <RelatedTo>DatabaseRow</RelatedTo>
-      <PrimaryKey>False</PrimaryKey>
-      <CustomValue></CustomValue>
-      <Delimiter>,</Delimiter>
-      <StartModifier>0</StartModifier>
-      <Element>6</Element>
-      <Table>0</Table>
-      <IndexStart>0</IndexStart>
-      <IndexEnd>-1</IndexEnd>
-      <Length>-1</Length>
-      <Method>RowElement</Method>
-      <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
+      <CustomText2>!d!</CustomText2>
       <CustomText3></CustomText3>
     </SeriesField>
     <SeriesField>
@@ -234,14 +139,90 @@
       <CustomValue></CustomValue>
       <Delimiter>,</Delimiter>
       <StartModifier>0</StartModifier>
-      <Element>7</Element>
+      <Element>NEXT</Element>
       <Table>0</Table>
       <IndexStart>0</IndexStart>
       <IndexEnd>-1</IndexEnd>
       <Length>-1</Length>
       <Method>RowElement</Method>
       <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>UserName</FieldName>
+      <FieldDataType>Object</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>DatabaseRow</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>NEXT</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>RowElement</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Title</FieldName>
+      <FieldDataType>Object</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>DatabaseRow</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>NEXT</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>RowElement</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Description</FieldName>
+      <FieldDataType>Object</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>DatabaseRow</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>NEXT</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>RowElement</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>TimeStamp</FieldName>
+      <FieldDataType>Object</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>DatabaseRow</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>NEXT</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>RowElement</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
       <CustomText3></CustomText3>
     </SeriesField>
     <SeriesField>
@@ -253,14 +234,14 @@
       <CustomValue></CustomValue>
       <Delimiter>,</Delimiter>
       <StartModifier>0</StartModifier>
-      <Element>8</Element>
+      <Element>NEXT</Element>
       <Table>0</Table>
       <IndexStart>0</IndexStart>
       <IndexEnd>-1</IndexEnd>
       <Length>-1</Length>
       <Method>RowElement</Method>
       <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
+      <CustomText2>!d!</CustomText2>
       <CustomText3></CustomText3>
     </SeriesField>
     <SeriesField>
@@ -272,33 +253,14 @@
       <CustomValue></CustomValue>
       <Delimiter>,</Delimiter>
       <StartModifier>0</StartModifier>
-      <Element>9</Element>
+      <Element>NEXT</Element>
       <Table>0</Table>
       <IndexStart>0</IndexStart>
       <IndexEnd>-1</IndexEnd>
       <Length>-1</Length>
       <Method>RowElement</Method>
       <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
-      <CustomText3></CustomText3>
-    </SeriesField>
-    <SeriesField>
-      <FieldName>GeoLocation</FieldName>
-      <FieldDataType>Object</FieldDataType>
-      <FieldXMLMapping>Element</FieldXMLMapping>
-      <RelatedTo>DatabaseRow</RelatedTo>
-      <PrimaryKey>False</PrimaryKey>
-      <CustomValue></CustomValue>
-      <Delimiter>,</Delimiter>
-      <StartModifier>0</StartModifier>
-      <Element>10</Element>
-      <Table>0</Table>
-      <IndexStart>0</IndexStart>
-      <IndexEnd>-1</IndexEnd>
-      <Length>-1</Length>
-      <Method>RowElement</Method>
-      <CustomText1></CustomText1>
-      <CustomText2></CustomText2>
+      <CustomText2>!d!</CustomText2>
       <CustomText3></CustomText3>
     </SeriesField>
   </Series>
@@ -308,7 +270,7 @@
     <MaxRowsHandler>RemoveFirstRow</MaxRowsHandler>
     <InputType>HTTPServer</InputType>
     <InputName>API</InputName>
-    <InputEnabled>True</InputEnabled>
+    <InputEnabled>False</InputEnabled>
     <HeaderOperation>None</HeaderOperation>
     <NotOperation>False</NotOperation>
     <HeaderValue></HeaderValue>
@@ -322,6 +284,212 @@
       <FieldDataType>String</FieldDataType>
       <FieldXMLMapping>Element</FieldXMLMapping>
       <RelatedTo>Document</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+  </Series>
+  <Series>
+    <SeriesName>APIOut</SeriesName>
+    <MaxRows>10000</MaxRows>
+    <MaxRowsHandler>RemoveFirstRow</MaxRowsHandler>
+    <InputType>DBReader</InputType>
+    <InputName>TremorzDB</InputName>
+    <InputEnabled>False</InputEnabled>
+    <HeaderOperation>None</HeaderOperation>
+    <NotOperation>False</NotOperation>
+    <HeaderValue></HeaderValue>
+    <Encoding>UTF8</Encoding>
+    <Endian>LittleEndian</Endian>
+    <CustomText1></CustomText1>
+    <CustomText2>!d!</CustomText2>
+    <CustomText3></CustomText3>
+    <SeriesField>
+      <FieldName>Category</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Source</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Type</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>User</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Title</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Description</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Date</FieldName>
+      <FieldDataType>Object</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Lat</FieldName>
+      <FieldDataType>Double</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>Lon</FieldName>
+      <FieldDataType>Double</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
+      <PrimaryKey>False</PrimaryKey>
+      <CustomValue></CustomValue>
+      <Delimiter>,</Delimiter>
+      <StartModifier>0</StartModifier>
+      <Element>0</Element>
+      <Table>0</Table>
+      <IndexStart>0</IndexStart>
+      <IndexEnd>-1</IndexEnd>
+      <Length>-1</Length>
+      <Method>All</Method>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </SeriesField>
+    <SeriesField>
+      <FieldName>GeoLocation</FieldName>
+      <FieldDataType>String</FieldDataType>
+      <FieldXMLMapping>Element</FieldXMLMapping>
+      <RelatedTo>None</RelatedTo>
       <PrimaryKey>False</PrimaryKey>
       <CustomValue></CustomValue>
       <Delimiter>,</Delimiter>
@@ -389,9 +557,9 @@
     <HTTPServerName>API</HTTPServerName>
     <IPVersion>IPv4</IPVersion>
     <IPAddress>localhost</IPAddress>
-    <Port>80</Port>
+    <Port>8081</Port>
     <AutoStart>True</AutoStart>
-    <SecurityType>AutoDetect</SecurityType>
+    <SecurityType>None</SecurityType>
     <SecurityCertificate></SecurityCertificate>
     <CertificatePassword></CertificatePassword>
     <ClientCertificate>Accept</ClientCertificate>
@@ -402,6 +570,17 @@
     <CustomText1></CustomText1>
     <CustomText2>!d!</CustomText2>
     <CustomText3></CustomText3>
+    <HTTPSource>
+      <HTTPSourceName>Local__On_Virtual_API</HTTPSourceName>
+      <Enabled>True</Enabled>
+      <PhysicalDirectory>C:\ProgramData\Intergraph\EdgeFrontier\Engine\Web\</PhysicalDirectory>
+      <VirtualDirectory>/API</VirtualDirectory>
+      <UserName></UserName>
+      <Password></Password>
+      <CustomText1></CustomText1>
+      <CustomText2>!d!</CustomText2>
+      <CustomText3></CustomText3>
+    </HTTPSource>
   </HTTPServer>
   <SystemEvent>
     <EventName>OnLoad_Elapsed</EventName>
@@ -423,7 +602,20 @@
     <EventTrigger>RequestReceived</EventTrigger>
     <Enabled>True</Enabled>
     <RelatedType>Policy</RelatedType>
-    <RelatedName>evAPI_RequestReceived</RelatedName>
+    <RelatedName></RelatedName>
+    <ExecutionMode>0</ExecutionMode>
+    <CustomText1></CustomText1>
+    <CustomText2></CustomText2>
+    <CustomText3></CustomText3>
+  </SystemEvent>
+  <SystemEvent>
+    <EventName>Timer10s_Elapsed</EventName>
+    <EventType>Timer</EventType>
+    <InstanceName>Timer_10s</InstanceName>
+    <EventTrigger>Elapsed</EventTrigger>
+    <Enabled>True</Enabled>
+    <RelatedType>SingleAction</RelatedType>
+    <RelatedName></RelatedName>
     <ExecutionMode>0</ExecutionMode>
     <CustomText1></CustomText1>
     <CustomText2></CustomText2>
@@ -449,9 +641,44 @@
     <InstanceName>TremorzDB</InstanceName>
     <Action>Select(SelectStatement)</Action>
     <ReturnValueTo></ReturnValueTo>
-    <PolicyName>evAPI_RequestReceived</PolicyName>
+    <PolicyName>evOnLoad_Elapsed</PolicyName>
     <PolicyOrder>1</PolicyOrder>
     <Enabled>True</Enabled>
+    <ExecutionMode>0</ExecutionMode>
+    <CustomText1></CustomText1>
+    <CustomText2>!d!</CustomText2>
+    <CustomText3></CustomText3>
+    <ActionParameter>
+      <ActionParameterName>SelectStatement</ActionParameterName>
+      <ValueType>Custom</ValueType>
+      <ValueOf>None</ValueOf>
+      <CustomValue>SELECT 
+       Category
+      ,Source
+      ,MessageType
+      ,UserName
+      ,MessageHeader
+      ,Message
+      ,TimeStamp
+      ,Latitude
+      ,Longitude
+  FROM app.MessageSummary
+</CustomValue>
+      <Internal>False</Internal>
+      <CustomText1></CustomText1>
+      <CustomText2></CustomText2>
+      <CustomText3></CustomText3>
+    </ActionParameter>
+  </SystemAction>
+  <SystemAction>
+    <ActionName>MyAction1</ActionName>
+    <ActionType>DBReader</ActionType>
+    <InstanceName>TremorzDB</InstanceName>
+    <Action>Select(SelectStatement)</Action>
+    <ReturnValueTo></ReturnValueTo>
+    <PolicyName>evOnLoad_Elapsed</PolicyName>
+    <PolicyOrder>1</PolicyOrder>
+    <Enabled>False</Enabled>
     <ExecutionMode>0</ExecutionMode>
     <CustomText1></CustomText1>
     <CustomText2>!d!</CustomText2>
@@ -484,7 +711,7 @@
       <ActionParameterName>SelectStatement</ActionParameterName>
       <ValueType>Custom</ValueType>
       <ValueOf>None</ValueOf>
-      <CustomValue>SELECT ID,UpdatedDate,Message, Source FROM datadump.FacebookPosts</CustomValue>
+      <CustomValue>SELECT ID,Message,0,Source, Source,UpdatedDate,0,'I' FROM datadump.FacebookPosts</CustomValue>
       <Internal>False</Internal>
       <CustomText1></CustomText1>
       <CustomText2></CustomText2>
@@ -509,6 +736,30 @@
       <ValueType>Custom</ValueType>
       <ValueOf>None</ValueOf>
       <CustomValue>SELECT LocationID,LocationType,WKT,SiteType,name,address,suburb,GEOMETRY_X,GEOMETRY_Y FROM datadump.LocationDataset</CustomValue>
+      <Internal>False</Internal>
+      <CustomText1></CustomText1>
+      <CustomText2></CustomText2>
+      <CustomText3></CustomText3>
+    </ActionParameter>
+  </SystemAction>
+  <SystemAction>
+    <ActionName>TremorzDB_SelectSummary</ActionName>
+    <ActionType>DBReader</ActionType>
+    <InstanceName>TremorzDB</InstanceName>
+    <Action>Select(SelectStatement)</Action>
+    <ReturnValueTo></ReturnValueTo>
+    <PolicyName>GetSchema</PolicyName>
+    <PolicyOrder>2</PolicyOrder>
+    <Enabled>True</Enabled>
+    <ExecutionMode>0</ExecutionMode>
+    <CustomText1></CustomText1>
+    <CustomText2>!d!</CustomText2>
+    <CustomText3></CustomText3>
+    <ActionParameter>
+      <ActionParameterName>SelectStatement</ActionParameterName>
+      <ValueType>Custom</ValueType>
+      <ValueOf>None</ValueOf>
+      <CustomValue>SELECT * from app.MessageSummary</CustomValue>
       <Internal>False</Internal>
       <CustomText1></CustomText1>
       <CustomText2></CustomText2>
@@ -569,10 +820,20 @@
   </SystemAction>
   <Timer>
     <TimerName>OnLoad</TimerName>
-    <Interval>1000</Interval>
+    <Interval>1</Interval>
     <IntervalType>Milliseconds</IntervalType>
     <Enabled>True</Enabled>
     <ElapseMax>1</ElapseMax>
+    <CustomText1></CustomText1>
+    <CustomText2>!d!</CustomText2>
+    <CustomText3></CustomText3>
+  </Timer>
+  <Timer>
+    <TimerName>Timer_10s</TimerName>
+    <Interval>10</Interval>
+    <IntervalType>Seconds</IntervalType>
+    <Enabled>True</Enabled>
+    <ElapseMax>0</ElapseMax>
     <CustomText1></CustomText1>
     <CustomText2>!d!</CustomText2>
     <CustomText3></CustomText3>
